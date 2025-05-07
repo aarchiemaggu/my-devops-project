@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Calculator</title>
+</head>
+<body>
+    <h2>Python Web Calculator</h2>
+    <form method="POST">
+        <input name="num1" type="number" step="any" required>
+        <select name="operation">
+            <option value="add">+</option>
+            <option value="subtract">−</option>
+            <option value="multiply">×</option>
+            <option value="divide">÷</option>
+        </select>
+        <input name="num2" type="number" step="any" required>
+        <button type="submit">Calculate</button>
+    </form>
+    {% if result is not none %}
+        <h3>Result: {{ result }}</h3>
+    {% endif %}
+</body>
+</html>

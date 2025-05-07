@@ -1,4 +1,6 @@
-from app import greet
+from app import app
 
-def test_greet():
-    assert greet("DevOps") == "Hello, DevOps!"
+def test_index_get():
+    client = app.test_client()
+    response = client.get("/")
+    assert response.status_code == 200
