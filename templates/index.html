@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Basic Calculator</title>
+    <title>Human Anatomy Learning App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h2>Python Web Calculator</h2>
-    <form method="POST">
-        <input name="num1" type="number" step="any" required>
-        <select name="operation">
-            <option value="add">+</option>
-            <option value="subtract">−</option>
-            <option value="multiply">×</option>
-            <option value="divide">÷</option>
-        </select>
-        <input name="num2" type="number" step="any" required>
-        <button type="submit">Calculate</button>
-    </form>
-    {% if result is not none %}
-        <h3>Result: {{ result }}</h3>
-    {% endif %}
+    <h2>Drag and Drop the Organs to Their Correct Position</h2>
+    <div class="container">
+        <div class="organ-pool">
+            <div draggable="true" class="organ" id="heart">Heart</div>
+            <div draggable="true" class="organ" id="brain">Brain</div>
+            <div draggable="true" class="organ" id="lungs">Lungs</div>
+            <div draggable="true" class="organ" id="stomach">Stomach</div>
+        </div>
+        <div class="body-diagram">
+            <div class="dropzone" id="drop-brain">Brain Area</div>
+            <div class="dropzone" id="drop-heart">Heart Area</div>
+            <div class="dropzone" id="drop-lungs">Lungs Area</div>
+            <div class="dropzone" id="drop-stomach">Stomach Area</div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
